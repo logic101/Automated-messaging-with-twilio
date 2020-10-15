@@ -5,21 +5,22 @@ Created on Thu Oct 15 08:35:22 2020
 @author: Regan
 """
 
-messages = ['Hey! Wake up sleepy?', 
-            'Amka yawa!',
-            'Wakie!! wakie!!']
 from twilio.rest import Client
 import schedule
 import random
 import time
 
+messages = ['Hey! Wake up sleepy?', 
+            'Good Morning?',
+            'How was your night?']
+
 def send_message(quotes = messages):
-    account = 'AC22fc516fe468a4961281c23e434358a9'
-    token = 'fbeed57d958a22d57229a287f5156513'
+    account = ''
+    token = ''
     quote = quotes[random.randint(0, len(messages)-1)]
     client = Client(account, token)
-    client.messages.create(to = '+254726232429',
-                           from_= '+14159664245',
+    client.messages.create(to = '',
+                           from_= '',
                            body = quote)
 
 
